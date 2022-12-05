@@ -4,7 +4,7 @@ collection: publications
 permalink: /publication/sumo
 excerpt: 'This paper is about the number 2. The number 3 is left for future work.'
 date: 2022-03-27
-venue: 'IEEE ITSC 2022'
+venue: 'IEEE ITSC'
 authors: Liu Shuo*, Yunhao Wang*, Xu Chen, Yongjie Fu, Xuan Di
 paperurl: 'https://www.researchgate.net/publication/365105113_SMART-eFlo_An_Integrated_SUMO-Gym_Framework_for_Multi-Agent_Reinforcement_Learning_in_Electric_Fleet_Management_Problem'
 # citation: 'Your Name, You. (2010). &quot;Paper Title Number 2.&quot; <i>Journal 1</i>. 1(2).'
