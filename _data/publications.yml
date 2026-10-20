@@ -1,0 +1,180 @@
+# Publications, newest first. The page groups them by `year`.
+#
+#   status:  "to appear" adds a tag; leave empty once the paper is out
+#   topics:  keys from _data/research.yml, used by the filter chips
+#   links:   any of paper / eprint / code / slides / video (omit what doesn't exist)
+
+- id: encore
+  title: "Encore: Aggregatable FHE-over-SNARK with Constant Proof Size"
+  authors: [Katerina Sotiraki, Yunhao Wang, Fan Zhang]
+  venue: IEEE Symposium on Security and Privacy (S&P)
+  short: S&P
+  year: 2027
+  status: to appear
+  topics: [vc, fhe]
+  tldr: >-
+    Lifts LPCP-based SNARKs into the FHE-over-SNARK paradigm: constant-size proofs for
+    homomorphic computation with native SIMD, plus d-Encore, a distributed prover whose
+    sub-proofs aggregate into one succinct proof.
+  links: {}
+
+- id: unifomr
+  title: "UnifOMR: Oblivious Message Retrieval with Near-optimal Concrete Efficiency"
+  authors: [Ben Fisch, Zeyu Liu, Eran Tromer, Yunhao Wang]
+  venue: ACM Conference on Computer and Communications Security (CCS)
+  short: CCS
+  year: 2026
+  status: to appear
+  topics: [omr]
+  tldr: >-
+    Shows that OMR is at least as hard as PIR, then closes most of the gap: 20–1080×
+    faster server runtime than the prior state of the art.
+  links:
+    eprint: https://eprint.iacr.org/2026/910
+
+- id: relect
+  title: "Relect: Single Secret Leader Election via FHE with Reduced Computation and Communication and Transparent Setup"
+  authors: [Haofei Liang, Zeyu Liu, Yunhao Wang, Xiang Xie, Yu Yu, Fan Zhang]
+  venue: ACM Conference on Computer and Communications Security (CCS)
+  short: CCS
+  year: 2026
+  status: to appear
+  topics: [ssle, fhe]
+  tldr: >-
+    An RLWE-based SSLE that drops Qelect's trusted setup while running up to 48× faster
+    with up to 2× less communication.
+  links:
+    eprint: https://eprint.iacr.org/2026/1619
+
+- id: dinocchio
+  title: "Dinocchio: Distributed Prover for Ring Arithmetic"
+  authors: [Katerina Sotiraki, Yunhao Wang, Fan Zhang]
+  venue: Cryptology ePrint Archive
+  short: ePrint
+  year: 2026
+  status: preprint
+  topics: [vc]
+  tldr: >-
+    The first distributed SNARK for rings with constant proof size and verification time:
+    roughly m-fold prover speedup with m sub-provers, scaling to circuits with ~2³² constraints.
+  links:
+    eprint: https://eprint.iacr.org/2026/159
+
+- id: mmkem
+  title: "Lattice-based Multi-message Multi-recipient KEM/PKE with Malicious Security"
+  authors: [Zeyu Liu, Katerina Sotiraki, Eran Tromer, Yunhao Wang]
+  venue: International Conference on the Theory and Application of Cryptology and Information Security (ASIACRYPT)
+  short: ASIACRYPT
+  year: 2025
+  topics: [pke, omr]
+  tldr: >-
+    Breaks existing lattice mmPKE schemes with maliciously crafted public keys, then builds
+    the first lattice mmKEM that stays private against them, with ~8× smaller ciphertexts
+    than Kyber for 100 recipients.
+  links:
+    paper: https://link.springer.com/chapter/10.1007/978-981-95-5099-9_14
+    eprint: https://eprint.iacr.org/2025/1655
+
+- id: indcpad
+  title: "IND-CPA-D of Relaxed Functional Bootstrapping: A New Attack, A General Fix, and A Stronger Model"
+  authors: [Zeyu Liu, Yunhao Wang, Ben Fisch]
+  venue: ACM Conference on Computer and Communications Security (CCS)
+  short: CCS
+  year: 2025
+  topics: [fhe]
+  tldr: >-
+    Recovers the secret key of every existing relaxed functional bootstrapping construction
+    within minutes, even at negligible failure probability, then gives a general fix and a
+    stronger security model.
+  links:
+    paper: https://dl.acm.org/doi/10.1145/3719027.3765170
+    eprint: https://eprint.iacr.org/2025/1627
+
+- id: qelect
+  title: "Qelect: Lattice-based Single Secret Leader Election Made Practical"
+  authors: [Yunhao Wang, Fan Zhang]
+  venue: USENIX Security Symposium
+  short: USENIX Sec
+  year: 2025
+  topics: [ssle, fhe]
+  tldr: >-
+    The first practical constant-round post-quantum SSLE, built from an RLWE-based
+    multi-party randomizable commitment and SIMD threshold FHE.
+  links:
+    paper: https://www.usenix.org/conference/usenixsecurity25/presentation/wang-yunhao
+    eprint: https://eprint.iacr.org/2025/122
+    code: https://github.com/wyunhao/Qelect
+
+- id: snakeeye
+  title: "Snake-eye Resistant PKE from LWE for Oblivious Message Retrieval and Robust Encryption"
+  authors: [Zeyu Liu, Katerina Sotiraki, Eran Tromer, Yunhao Wang]
+  venue: International Conference on the Theory and Applications of Cryptographic Techniques (EUROCRYPT)
+  short: EUROCRYPT
+  year: 2025
+  topics: [pke, omr]
+  tldr: >-
+    Proves OMRp2 DoS-resistant under standard LWE, introduces snake-eye resistant PKE, and
+    derives the first robust lattice PKE without KEM-DEM, yielding a DoS-resistant OMR 12× faster than OMRp2.
+  links:
+    paper: https://link.springer.com/chapter/10.1007/978-3-031-91131-6_5
+    eprint: https://eprint.iacr.org/2024/510
+    code: https://github.com/ObliviousMessageRetrieval/ObliviousMessageRetrieval/tree/dos_perfomr
+
+- id: relaxedfb
+  title: "Relaxed Functional Bootstrapping: A New Perspective on BGV/BFV Bootstrapping"
+  authors: [Zeyu Liu, Yunhao Wang]
+  venue: International Conference on the Theory and Application of Cryptology and Information Security (ASIACRYPT)
+  short: ASIACRYPT
+  year: 2024
+  topics: [fhe]
+  tldr: >-
+    Relaxes what bootstrapping must guarantee and folds in a free function evaluation,
+    making BGV/BFV bootstrapping 1–2 orders of magnitude faster.
+  links:
+    paper: https://link.springer.com/chapter/10.1007/978-981-96-0875-1_7
+    eprint: https://eprint.iacr.org/2024/172
+
+- id: perfomr
+  title: "PerfOMR: Oblivious Message Retrieval with Reduced Communication and Computation"
+  authors: [Zeyu Liu, Eran Tromer, Yunhao Wang]
+  venue: USENIX Security Symposium
+  short: USENIX Sec
+  year: 2024
+  topics: [omr, fhe]
+  tldr: >-
+    Ring-LWE clues make OMR far cheaper: a retrieval circuit evaluated 13.8× faster, or
+    public keys about 235× smaller.
+  links:
+    paper: https://www.usenix.org/conference/usenixsecurity24/presentation/liu-zeyu
+    eprint: https://eprint.iacr.org/2024/204
+    code: https://github.com/ObliviousMessageRetrieval/ObliviousMessageRetrieval/tree/perfomr
+
+- id: gomr
+  title: "Group Oblivious Message Retrieval"
+  authors: [Zeyu Liu, Eran Tromer, Yunhao Wang]
+  venue: IEEE Symposium on Security and Privacy (S&P)
+  short: S&P
+  year: 2024
+  topics: [omr, fhe]
+  tldr: >-
+    OMR for group messaging: server cost grows very slowly with group size, and each
+    recipient's cost is independent of it.
+  links:
+    paper: https://ieeexplore.ieee.org/document/10646845
+    eprint: https://eprint.iacr.org/2023/534
+    code: https://github.com/ObliviousMessageRetrieval/ObliviousMessageRetrieval/tree/gomr
+
+- id: amortizedfb
+  title: "Amortized Functional Bootstrapping in less than 7 ms, with Õ(1) Polynomial Multiplications"
+  authors: [Zeyu Liu, Yunhao Wang]
+  venue: International Conference on the Theory and Application of Cryptology and Information Security (ASIACRYPT)
+  short: ASIACRYPT
+  year: 2023
+  topics: [fhe]
+  tldr: >-
+    Batched bootstrapping of LWE ciphertexts that is efficient in practice, not just
+    asymptotically: under 5 ms per binary gate and about 6.7 ms per arbitrary 9-bit function.
+  links:
+    paper: https://link.springer.com/chapter/10.1007/978-981-99-8736-8_4
+    eprint: https://eprint.iacr.org/2023/910
+    code: https://github.com/wyunhao/FHEBootstrap

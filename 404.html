@@ -1,0 +1,14 @@
+---
+layout: default
+title: Not found
+permalink: /404.html
+---
+<script>
+  // Old academicpages URLs (/publications/, /publication/gomr, ...) now live on the home page.
+  if (/^\/(publications?|teaching|talks|cv)(\/|$)/.test(location.pathname)) location.replace('/#' + (location.pathname.indexOf('/publication') === 0 ? 'publications' : 'top'));
+</script>
+<main class="lost">
+  <h1>404</h1>
+  <p>This vector is not in the lattice.</p>
+  <a class="btn" href="{{ '/' | relative_url }}">&larr; back to the origin</a>
+</main>

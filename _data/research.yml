@@ -1,0 +1,31 @@
+# Research themes. `key` is what publications list under `topics`.
+
+- key: fhe
+  name: Fully homomorphic encryption
+  chip: FHE
+  line: Faster bootstrapping, and sharper security models for computing on encrypted data.
+  keywords: [functional bootstrapping, BGV / BFV, amortization, IND-CPA-D]
+
+- key: omr
+  name: Metadata privacy
+  chip: OMR
+  line: Oblivious message retrieval, where servers find your messages without learning which ones are yours.
+  keywords: [anonymous message delivery, group messaging, PIR, DoS resistance]
+
+- key: pke
+  name: Lattice-based encryption
+  chip: PKE / KEM
+  line: Post-quantum PKE and KEM with stronger guarantees and smaller ciphertexts.
+  keywords: [LWE, Module-LWE, robustness, snake-eye resistance, multi-recipient KEM]
+
+- key: ssle
+  name: Decentralized protocols
+  chip: Leader election
+  line: Post-quantum single secret leader election for proof-of-stake consensus.
+  keywords: [SSLE, threshold FHE, RLWE commitments, transparent setup]
+
+- key: vc
+  name: Verifiable computation
+  chip: Verifiable FHE
+  line: Succinct proofs that a server computed honestly, even when it only ever sees ciphertexts.
+  keywords: [SNARKs over rings, LPCP / QAP, distributed provers, proof aggregation]

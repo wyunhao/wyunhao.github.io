@@ -1,0 +1,231 @@
+---
+layout: default
+---
+{%- assign pubs = site.data.publications -%}
+{%- assign themes = site.data.research -%}
+
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="topbar">
+  <div class="wrap topbar__inner">
+    <a class="mark" href="#top" aria-label="Yunhao Wang, back to top">
+      <span class="mark__glyph" aria-hidden="true">yw</span>
+      <span class="mark__name">Yunhao Wang</span>
+    </a>
+    <nav class="nav" aria-label="Sections">
+      <a href="#research">research</a>
+      <a href="#publications">papers</a>
+      <a href="#background" class="nav__opt">background</a>
+      <a href="#contact">contact</a>
+    </nav>
+    <button class="theme-toggle" type="button" aria-label="Switch between light and dark mode">
+      <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5Z"/></svg>
+      <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2.5v2M12 19.5v2M2.5 12h2M19.5 12h2M5.3 5.3l1.4 1.4M17.3 17.3l1.4 1.4M5.3 18.7l1.4-1.4M17.3 6.7l1.4-1.4"/></svg>
+    </button>
+  </div>
+</header>
+
+<main id="main">
+
+  <section class="hero" id="top">
+    <canvas class="lattice" aria-hidden="true"></canvas>
+    <div class="wrap hero__grid">
+      <div class="hero__text">
+        <p class="kicker">Ph.D. student &middot; Computer Science &middot; Yale</p>
+        <h1 class="name">Yunhao <em>Wang</em></h1>
+        <p class="lede">
+          I build <em>practical cryptography from lattices</em>: fast fully homomorphic encryption,
+          metadata-private messaging, and proofs that encrypted computation was done right.
+        </p>
+        <p class="bio">
+          I am a fourth-year Ph.D. student at Yale University, advised by
+          <a href="https://sotiraki.com/">Katerina Sotiraki</a> and
+          <a href="https://www.fanzhang.me/">Fan Zhang</a>, and affiliated with
+          <a href="https://www.initc3.org/">IC3</a>. My research is on applied lattice-based cryptography
+          and verifiable computation. Before Yale, I received my M.S. in Computer Science from Columbia University,
+          working with <a href="https://www.cs.columbia.edu/~tal/">Tal Malkin</a> and
+          <a href="https://cs-people.bu.edu/tromer">Eran Tromer</a>, and my B.S. in Computer Science and
+          Applied Mathematics from UCLA.
+        </p>
+        <ul class="links">
+          <li>
+            <a class="btn btn--solid js-email" href="#contact" data-u="yunhao.wang" data-d="yale.edu">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="1.5"/><path d="m3.5 6 8.5 7 8.5-7"/></svg>
+              Email
+            </a>
+          </li>
+          <li>
+            <a class="btn" href="{{ site.author.scholar }}">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" aria-hidden="true"><path d="M2 9.5 12 4l10 5.5-10 5.5L2 9.5Z"/><path d="M6 11.7V16c0 1.4 2.7 3 6 3s6-1.6 6-3v-4.3"/></svg>
+              Google Scholar
+            </a>
+          </li>
+          <li>
+            <a class="btn" href="{{ site.author.github }}">
+              <svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg>
+              GitHub
+            </a>
+          </li>
+        </ul>
+        <a class="latest" href="#pub-encore">
+          <span class="latest__tag">New</span>
+          <span class="latest__text"><b>Encore</b>, constant-size proofs for FHE computation, to appear at IEEE S&amp;P 2027</span>
+          <span class="latest__arrow" aria-hidden="true">&rarr;</span>
+        </a>
+      </div>
+
+      <figure class="portrait">
+        <div class="portrait__frame">
+          <img src="{{ '/images/yunhao.jpg' | relative_url }}"
+               srcset="{{ '/images/yunhao-480.jpg' | relative_url }} 480w, {{ '/images/yunhao.jpg' | relative_url }} 720w"
+               sizes="(max-width: 900px) 260px, 340px"
+               width="720" height="900" alt="Yunhao Wang crouching at night with a Nikon camera, smiling, hair blown by the wind">
+          <span class="tick tick--tl"></span><span class="tick tick--tr"></span>
+          <span class="tick tick--bl"></span><span class="tick tick--br"></span>
+        </div>
+        <figcaption><span>Fig. 1</span> The author, off the lattice.</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section class="section" id="research">
+    <div class="wrap">
+      <h2 class="sh"><span class="sh__no">&sect;01</span><span class="sh__title">Research</span><span class="sh__rule"></span></h2>
+
+      <p class="statement">
+        My work sits where <em>lattice-based cryptography</em> meets real systems. I design protocols on
+        LWE, Ring-LWE and fully homomorphic encryption, prove them secure, and implement them with
+        concrete costs in mind, from sub-7&nbsp;ms amortized bootstrapping to <em>constant-size proofs</em>
+        for encrypted computation.
+      </p>
+
+      <ol class="themes">
+        {%- for t in themes %}
+        {%- assign tp = pubs | where_exp: "p", "p.topics contains t.key" %}
+        <li class="theme">
+          <a href="#publications" data-filter="{{ t.key }}">
+            <span class="theme__idx">0{{ forloop.index }}</span>
+            <span class="theme__name">{{ t.name }}</span>
+            <span class="theme__desc">
+              <span class="theme__line">{{ t.line }}</span>
+              <span class="kw">{% for k in t.keywords %}<span>{{ k }}</span>{% endfor %}</span>
+            </span>
+            <span class="theme__go">{{ tp.size }} paper{% if tp.size != 1 %}s{% endif %} <span aria-hidden="true">&darr;</span></span>
+          </a>
+        </li>
+        {%- endfor %}
+      </ol>
+    </div>
+  </section>
+
+  <section class="section" id="publications">
+    <div class="wrap">
+      <h2 class="sh">
+        <span class="sh__no">&sect;02</span><span class="sh__title">Publications</span><span class="sh__rule"></span>
+        <a class="sh__aside" href="{{ site.author.scholar }}">Google Scholar &nearr;</a>
+      </h2>
+
+      <div class="filters" role="group" aria-label="Filter papers by topic">
+        <button class="chip is-active" type="button" data-filter="all" aria-pressed="true">All <span>{{ pubs.size }}</span></button>
+        {%- for t in themes %}
+        {%- assign tp = pubs | where_exp: "p", "p.topics contains t.key" %}
+        <button class="chip" type="button" data-filter="{{ t.key }}" aria-pressed="false">{{ t.chip }} <span>{{ tp.size }}</span></button>
+        {%- endfor %}
+      </div>
+
+      {%- assign num = pubs.size %}
+      {%- assign years = pubs | group_by: "year" %}
+      {%- for y in years %}
+      <div class="year">
+        <h3 class="year__label">{{ y.name }}</h3>
+        <ol class="pubs">
+          {%- for p in y.items %}
+          {%- assign main = p.links.paper | default: p.links.eprint %}
+          <li class="pub" id="pub-{{ p.id }}" data-topics="{{ p.topics | join: ' ' }}">
+            <p class="pub__meta">
+              <span class="pub__no">[{{ num }}]</span>
+              <span class="stamp">{{ p.short | escape }} &rsquo;{{ p.year | append: '' | slice: 2, 2 }}</span>
+              {%- if p.status %}<span class="tag">{{ p.status }}</span>{% endif %}
+            </p>
+            <h4 class="pub__title">{% if main %}<a href="{{ main }}">{{ p.title | escape }}</a>{% else %}{{ p.title | escape }}{% endif %}</h4>
+            <p class="pub__authors">
+              {%- for a in p.authors -%}
+              {%- if a == site.author.name %}<span class="me">{{ a }}</span>{% else %}{{ a }}{% endif %}{% unless forloop.last %}, {% endunless -%}
+              {%- endfor -%}
+            </p>
+            <p class="pub__venue">{{ p.venue | escape }}, {{ p.year }}</p>
+            <p class="pub__tldr"><span class="pub__tldr-label">tl;dr</span> {{ p.tldr | escape }}</p>
+            <ul class="pub__links">
+              {%- if p.links.paper %}<li><a href="{{ p.links.paper }}">paper &nearr;</a></li>{% endif %}
+              {%- if p.links.eprint %}<li><a href="{{ p.links.eprint }}">ePrint &nearr;</a></li>{% endif %}
+              {%- if p.links.code %}<li><a href="{{ p.links.code }}">code &nearr;</a></li>{% endif %}
+              {%- if p.links.slides %}<li><a href="{{ p.links.slides }}">slides &nearr;</a></li>{% endif %}
+              {%- if p.links.video %}<li><a href="{{ p.links.video }}">video &nearr;</a></li>{% endif %}
+              {%- unless main %}<li class="muted">preprint coming soon</li>{% endunless %}
+            </ul>
+          </li>
+          {%- assign num = num | minus: 1 %}
+          {%- endfor %}
+        </ol>
+      </div>
+      {%- endfor %}
+    </div>
+  </section>
+
+  <section class="section" id="background">
+    <div class="wrap">
+      <h2 class="sh"><span class="sh__no">&sect;03</span><span class="sh__title">Background</span><span class="sh__rule"></span></h2>
+      <ol class="timeline">
+        <li>
+          <span class="tl__when">2023 &ndash; now</span>
+          <div>
+            <p class="tl__what">Ph.D. in Computer Science</p>
+            <p class="tl__where">Yale University &middot; advised by Katerina Sotiraki and Fan Zhang</p>
+          </div>
+        </li>
+        <li>
+          <span class="tl__when">2021 &ndash; 2023</span>
+          <div>
+            <p class="tl__what">M.S. in Computer Science</p>
+            <p class="tl__where">Columbia University &middot; with Tal Malkin and Eran Tromer</p>
+          </div>
+        </li>
+        <li>
+          <span class="tl__when">2014 &ndash; 2018</span>
+          <div>
+            <p class="tl__what">B.S. in Computer Science and in Applied Mathematics</p>
+            <p class="tl__where">University of California, Los Angeles &middot; cum laude</p>
+          </div>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+</main>
+
+<footer class="contact" id="contact">
+  <div class="wrap">
+    <p class="contact__kicker"><span>&sect;04</span> Contact</p>
+    <p class="contact__big">Happy to talk <em>lattices</em>, FHE, or anything that should be verifiable.</p>
+    <div class="contact__grid">
+      <div>
+        <span class="label">Email</span>
+        <a class="js-email contact__email" href="#contact" data-u="yunhao.wang" data-d="yale.edu" data-show>yunhao.wang [at] yale.edu</a>
+        <button class="copy" type="button" data-u="yunhao.wang" data-d="yale.edu">copy</button>
+      </div>
+      <div>
+        <span class="label">Office</span>
+        Department of Computer Science<br>Yale University, New Haven, CT
+      </div>
+      <div>
+        <span class="label">Elsewhere</span>
+        <a href="{{ site.author.scholar }}">Google Scholar</a><br>
+        <a href="{{ site.author.github }}">GitHub</a>
+      </div>
+    </div>
+    <div class="colophon">
+      <span>&copy; {{ site.time | date: '%Y' }} Yunhao Wang</span>
+      <span>Hand-built &middot; no analytics &middot; updated {{ site.time | date: '%b %Y' }}</span>
+    </div>
+  </div>
+</footer>
