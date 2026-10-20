@@ -1,22 +1,26 @@
 # Publications, newest first. The page groups them by `year`.
 #
-#   status:  "to appear" adds a tag; leave empty once the paper is out
-#   topics:  keys from _data/research.yml, used by the filter chips
-#   links:   any of paper / eprint / code / slides / video (omit what doesn't exist)
+#   edition:       conference edition when it differs from `year` (e.g. S&P 2027 papers out in 2026)
+#   status:        "to appear" adds a tag; leave empty once the paper is out
+#   author_order:  set on papers whose authors are NOT alphabetical; shows a dagger
+#   topics:        keys from _data/research.yml, used by the filter chips
+#   links:         any of pdf (a file in /papers) / paper / eprint / code / slides / video
 
 - id: encore
   title: "Encore: Aggregatable FHE-over-SNARK with Constant Proof Size"
   authors: [Katerina Sotiraki, Yunhao Wang, Fan Zhang]
   venue: IEEE Symposium on Security and Privacy (S&P)
   short: S&P
-  year: 2027
+  year: 2026
+  edition: 2027
   status: to appear
   topics: [vc, fhe]
   tldr: >-
     Lifts LPCP-based SNARKs into the FHE-over-SNARK paradigm: constant-size proofs for
     homomorphic computation with native SIMD, plus d-Encore, a distributed prover whose
     sub-proofs aggregate into one succinct proof.
-  links: {}
+  links:
+    pdf: /papers/encore.pdf
 
 - id: unifomr
   title: "UnifOMR: Oblivious Message Retrieval with Near-optimal Concrete Efficiency"
@@ -78,6 +82,7 @@
 - id: indcpad
   title: "IND-CPA-D of Relaxed Functional Bootstrapping: A New Attack, A General Fix, and A Stronger Model"
   authors: [Zeyu Liu, Yunhao Wang, Ben Fisch]
+  author_order: Authors not in alphabetical order
   venue: ACM Conference on Computer and Communications Security (CCS)
   short: CCS
   year: 2025

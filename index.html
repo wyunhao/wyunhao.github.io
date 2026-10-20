@@ -13,7 +13,7 @@ layout: default
       <span class="mark__name">Yunhao Wang</span>
     </a>
     <nav class="nav" aria-label="Sections">
-      <a href="#research">research</a>
+      <a href="#top">about</a>
       <a href="#publications">papers</a>
       <a href="#background" class="nav__opt">background</a>
       <a href="#contact">contact</a>
@@ -33,19 +33,25 @@ layout: default
       <div class="hero__text">
         <p class="kicker">Ph.D. student &middot; Computer Science &middot; Yale</p>
         <h1 class="name">Yunhao <em>Wang</em></h1>
-        <p class="lede">
-          I build <em>practical cryptography from lattices</em>: fast fully homomorphic encryption,
-          metadata-private messaging, and proofs that encrypted computation was done right.
-        </p>
         <p class="bio">
           I am a fourth-year Ph.D. student at Yale University, advised by
           <a href="https://sotiraki.com/">Katerina Sotiraki</a> and
           <a href="https://www.fanzhang.me/">Fan Zhang</a>, and affiliated with
-          <a href="https://www.initc3.org/">IC3</a>. My research is on applied lattice-based cryptography
-          and verifiable computation. Before Yale, I received my M.S. in Computer Science from Columbia University,
-          working with <a href="https://www.cs.columbia.edu/~tal/">Tal Malkin</a> and
-          <a href="https://cs-people.bu.edu/tromer">Eran Tromer</a>, and my B.S. in Computer Science and
+          <a href="https://www.initc3.org/">IC3</a>. Before Yale, I received my M.S. in Computer Science
+          from Columbia University, working with <a href="https://www.cs.columbia.edu/~tal/">Tal Malkin</a>
+          and <a href="https://cs-people.bu.edu/tromer">Eran Tromer</a>, and my B.S. in Computer Science and
           Applied Mathematics from UCLA.
+        </p>
+        <p class="bio">
+          My research is in applied cryptography, centered on lattices. I design post-quantum protocols that
+          are both provably secure and practical, and so far have worked on
+          <a href="#publications" data-filter="fhe">fully homomorphic encryption</a>,
+          <a href="#publications" data-filter="omr">metadata-private messaging</a>,
+          <a href="#publications" data-filter="ssle">leader election</a> for blockchains, and
+          <a href="#publications" data-filter="vc">verifiable computation</a> over encrypted data.
+          Going forward, I am excited about advanced public-key encryption, new lattice-based primitives,
+          and post-quantum cryptography and SNARKs more broadly, toward a future where strong cryptography
+          is quantum-safe, expressive, and verifiable by default.
         </p>
         <ul class="links">
           <li>
@@ -88,42 +94,13 @@ layout: default
     </div>
   </section>
 
-  <section class="section" id="research">
-    <div class="wrap">
-      <h2 class="sh"><span class="sh__no">&sect;01</span><span class="sh__title">Research</span><span class="sh__rule"></span></h2>
-
-      <p class="statement">
-        My work sits where <em>lattice-based cryptography</em> meets real systems. I design protocols on
-        LWE, Ring-LWE and fully homomorphic encryption, prove them secure, and implement them with
-        concrete costs in mind, from sub-7&nbsp;ms amortized bootstrapping to <em>constant-size proofs</em>
-        for encrypted computation.
-      </p>
-
-      <ol class="themes">
-        {%- for t in themes %}
-        {%- assign tp = pubs | where_exp: "p", "p.topics contains t.key" %}
-        <li class="theme">
-          <a href="#publications" data-filter="{{ t.key }}">
-            <span class="theme__idx">0{{ forloop.index }}</span>
-            <span class="theme__name">{{ t.name }}</span>
-            <span class="theme__desc">
-              <span class="theme__line">{{ t.line }}</span>
-              <span class="kw">{% for k in t.keywords %}<span>{{ k }}</span>{% endfor %}</span>
-            </span>
-            <span class="theme__go">{{ tp.size }} paper{% if tp.size != 1 %}s{% endif %} <span aria-hidden="true">&darr;</span></span>
-          </a>
-        </li>
-        {%- endfor %}
-      </ol>
-    </div>
-  </section>
-
   <section class="section" id="publications">
     <div class="wrap">
       <h2 class="sh">
-        <span class="sh__no">&sect;02</span><span class="sh__title">Publications</span><span class="sh__rule"></span>
+        <span class="sh__no">&sect;01</span><span class="sh__title">Publications</span><span class="sh__rule"></span>
         <a class="sh__aside" href="{{ site.author.scholar }}">Google Scholar &nearr;</a>
       </h2>
+      <p class="pubnote">Authors are listed in alphabetical order, unless marked with <span class="dagger">&dagger;</span>.</p>
 
       <div class="filters" role="group" aria-label="Filter papers by topic">
         <button class="chip is-active" type="button" data-filter="all" aria-pressed="true">All <span>{{ pubs.size }}</span></button>
@@ -140,11 +117,12 @@ layout: default
         <h3 class="year__label">{{ y.name }}</h3>
         <ol class="pubs">
           {%- for p in y.items %}
-          {%- assign main = p.links.paper | default: p.links.eprint %}
+          {%- if p.links.pdf %}{% assign main = p.links.pdf | relative_url %}{% else %}{% assign main = p.links.paper | default: p.links.eprint %}{% endif %}
+          {%- assign ed = p.edition | default: p.year | append: '' %}
           <li class="pub" id="pub-{{ p.id }}" data-topics="{{ p.topics | join: ' ' }}">
             <p class="pub__meta">
               <span class="pub__no">[{{ num }}]</span>
-              <span class="stamp">{{ p.short | escape }} &rsquo;{{ p.year | append: '' | slice: 2, 2 }}</span>
+              <span class="stamp">{{ p.short | escape }} &rsquo;{{ ed | slice: 2, 2 }}</span>
               {%- if p.status %}<span class="tag">{{ p.status }}</span>{% endif %}
             </p>
             <h4 class="pub__title">{% if main %}<a href="{{ main }}">{{ p.title | escape }}</a>{% else %}{{ p.title | escape }}{% endif %}</h4>
@@ -152,10 +130,12 @@ layout: default
               {%- for a in p.authors -%}
               {%- if a == site.author.name %}<span class="me">{{ a }}</span>{% else %}{{ a }}{% endif %}{% unless forloop.last %}, {% endunless -%}
               {%- endfor -%}
+              {%- if p.author_order %}<span class="dagger" title="{{ p.author_order | escape }}">&dagger;</span>{% endif -%}
             </p>
-            <p class="pub__venue">{{ p.venue | escape }}, {{ p.year }}</p>
+            <p class="pub__venue">{{ p.venue | escape }}, {{ ed }}</p>
             <p class="pub__tldr"><span class="pub__tldr-label">tl;dr</span> {{ p.tldr | escape }}</p>
             <ul class="pub__links">
+              {%- if p.links.pdf %}<li><a href="{{ p.links.pdf | relative_url }}">pdf &nearr;</a></li>{% endif %}
               {%- if p.links.paper %}<li><a href="{{ p.links.paper }}">paper &nearr;</a></li>{% endif %}
               {%- if p.links.eprint %}<li><a href="{{ p.links.eprint }}">ePrint &nearr;</a></li>{% endif %}
               {%- if p.links.code %}<li><a href="{{ p.links.code }}">code &nearr;</a></li>{% endif %}
@@ -174,7 +154,7 @@ layout: default
 
   <section class="section" id="background">
     <div class="wrap">
-      <h2 class="sh"><span class="sh__no">&sect;03</span><span class="sh__title">Background</span><span class="sh__rule"></span></h2>
+      <h2 class="sh"><span class="sh__no">&sect;02</span><span class="sh__title">Background</span><span class="sh__rule"></span></h2>
       <ol class="timeline">
         <li>
           <span class="tl__when">2023 &ndash; now</span>
@@ -205,7 +185,7 @@ layout: default
 
 <footer class="contact" id="contact">
   <div class="wrap">
-    <p class="contact__kicker"><span>&sect;04</span> Contact</p>
+    <p class="contact__kicker"><span>&sect;03</span> Contact</p>
     <p class="contact__big">Happy to talk <em>lattices</em>, FHE, or anything that should be verifiable.</p>
     <div class="contact__grid">
       <div>

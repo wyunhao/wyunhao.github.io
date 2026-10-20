@@ -212,7 +212,7 @@
     });
   }
   chips.forEach(c => c.addEventListener('click', () => filter(c.dataset.filter)));
-  document.querySelectorAll('.theme a[data-filter]').forEach(a => a.addEventListener('click', () => filter(a.dataset.filter)));
+  document.querySelectorAll('a[data-filter]').forEach(a => a.addEventListener('click', () => filter(a.dataset.filter)));
   // a link straight to one paper should never land on a filtered-out entry
   document.querySelectorAll('a[href^="#pub-"]').forEach(a => a.addEventListener('click', () => filter('all')));
 
