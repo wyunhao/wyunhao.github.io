@@ -15,6 +15,7 @@ layout: default
     <nav class="nav" aria-label="Sections">
       <a href="#top">about</a>
       <a href="#publications">papers</a>
+      <a href="#service" class="nav__opt">service</a>
       <a href="#background" class="nav__opt">background</a>
       <a href="#contact">contact</a>
     </nav>
@@ -158,9 +159,27 @@ layout: default
     </div>
   </section>
 
+  <section class="section" id="service">
+    <div class="wrap">
+      <h2 class="sh"><span class="sh__no">&sect;02</span><span class="sh__title">Academic Service</span><span class="sh__rule"></span></h2>
+      <ul class="service">
+        {%- for row in site.data.service %}
+        <li>
+          <span class="service__role">{{ row.role }}</span>
+          <ul class="service__venues">
+            {%- for v in row.venues %}
+            <li><span class="service__venue">{{ v.name | escape }}</span><span class="service__years">{{ v.years }}</span></li>
+            {%- endfor %}
+          </ul>
+        </li>
+        {%- endfor %}
+      </ul>
+    </div>
+  </section>
+
   <section class="section" id="background">
     <div class="wrap">
-      <h2 class="sh"><span class="sh__no">&sect;02</span><span class="sh__title">Background</span><span class="sh__rule"></span></h2>
+      <h2 class="sh"><span class="sh__no">&sect;03</span><span class="sh__title">Background</span><span class="sh__rule"></span></h2>
       <ol class="timeline">
         <li>
           <span class="tl__when">2023 &ndash; now</span>
@@ -191,7 +210,7 @@ layout: default
 
 <footer class="contact" id="contact">
   <div class="wrap">
-    <p class="contact__kicker"><span>&sect;03</span> Contact</p>
+    <p class="contact__kicker"><span>&sect;04</span> Contact</p>
     <p class="contact__big">Happy to talk <em>lattices</em>, FHE, or anything that should be verifiable.</p>
     <div class="contact__grid">
       <div>

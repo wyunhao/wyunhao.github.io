@@ -1,0 +1,29 @@
+# Academic service. Each role becomes one row; venues render as tags in this order.
+
+- role: Program committee
+  venues:
+    - name: USENIX Security
+      years: "2027"
+
+- role: Sub-reviewer
+  venues:
+    - name: CRYPTO
+      years: "2023–2024, 2026"
+    - name: EUROCRYPT
+      years: "2025–2026"
+    - name: ASIACRYPT
+      years: "2024"
+    - name: TCC
+      years: "2025–2026"
+    - name: PKC
+      years: "2026"
+    - name: IEEE S&P
+      years: "2025"
+    - name: ACM CCS
+      years: "2025–2026"
+    - name: USENIX Security
+      years: "2024"
+    - name: FOCS
+      years: "2026"
+    - name: SODA
+      years: "2027"

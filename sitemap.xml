@@ -1,0 +1,15 @@
+---
+layout: null
+---
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>{{ site.url }}/</loc>
+    <lastmod>{{ site.time | date_to_xmlschema }}</lastmod>
+  </url>
+  {%- for p in site.data.publications %}{% if p.links.pdf %}
+  <url>
+    <loc>{{ site.url }}{{ p.links.pdf }}</loc>
+  </url>
+  {%- endif %}{% endfor %}
+</urlset>
