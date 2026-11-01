@@ -7,6 +7,10 @@ url: https://wyunhao.github.io
 baseurl: ""
 lang: en
 
+# Private visitor stats: your GoatCounter code (dashboard at https://CODE.goatcounter.com).
+# Leave empty to turn tracking off.
+goatcounter:
+
 author:
   name: Yunhao Wang
   email: yunhao.wang@yale.edu

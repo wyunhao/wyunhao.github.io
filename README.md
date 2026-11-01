@@ -39,6 +39,12 @@ To add a paper, copy an entry in `_data/publications.yml` and fill it in:
 
 Encore links to the PDF in `papers/encore.pdf`. When its ePrint version is out, add an `eprint:` link next to it.
 
+## Visitor stats
+
+Set `goatcounter:` in `_config.yml` to your GoatCounter code; the dashboard (private by default) is at `https://CODE.goatcounter.com`.
+It counts page views and clicks on paper and profile links (shown as events like `paper/encore/pdf`).
+Open `https://wyunhao.github.io/#toggle-goatcounter` once in each of your own browsers so your visits aren't counted.
+
 ## Local preview
 
 ```sh
