@@ -1,4 +1,5 @@
-# Academic service. Each role becomes one row; venues render as tags in this order.
+# Service and teaching. Each role becomes one row: venues render as tags in this order,
+# courses (newest first) as a list.
 
 - role: Program committee
   venues:
@@ -27,3 +28,15 @@
       years: "2026"
     - name: SODA
       years: "2027"
+
+- role: Teaching assistant
+  courses:
+    - term: Spring 2025
+      code: CPSC 444
+      name: Trustworthy and Decentralized Systems
+    - term: Fall 2024
+      code: CPSC 416
+      name: Post-Quantum Cryptography
+    - term: Spring 2024
+      code: CPSC 467
+      name: Introduction to Cryptography

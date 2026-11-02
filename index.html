@@ -15,6 +15,7 @@ layout: default
     <nav class="nav" aria-label="Sections">
       <a href="#top">about</a>
       <a href="#publications">papers</a>
+      <a href="#talks" class="nav__opt">talks</a>
       <a href="#service" class="nav__opt">service</a>
       <a href="#background" class="nav__opt">background</a>
     </nav>
@@ -158,18 +159,47 @@ layout: default
     </div>
   </section>
 
+  <section class="section" id="talks">
+    <div class="wrap">
+      <h2 class="sh"><span class="sh__no">&sect;02</span><span class="sh__title">Talks</span><span class="sh__rule"></span></h2>
+      <ol class="talks">
+        {%- for t in site.data.talks %}
+        <li>
+          <span class="tl__when">{{ t.when }}</span>
+          <div>
+            <p class="talk__title">{% if t.papers.size == 1 %}<a href="#pub-{{ t.papers[0] }}">{{ t.title | escape }}</a>{% else %}{{ t.title | escape }}{% endif %}</p>
+            <p class="talk__event">{{ t.event | escape }}
+              {%- for id in t.papers %}
+              {%- for p in pubs %}{% if p.id == id %}{% assign n = pubs.size | minus: forloop.index0 %}<a class="ref" href="#pub-{{ id }}" title="{{ p.title | escape }}">[{{ n }}]</a>{% endif %}{% endfor %}
+              {%- endfor %}
+            </p>
+          </div>
+        </li>
+        {%- endfor %}
+      </ol>
+    </div>
+  </section>
+
   <section class="section" id="service">
     <div class="wrap">
-      <h2 class="sh"><span class="sh__no">&sect;02</span><span class="sh__title">Academic Service</span><span class="sh__rule"></span></h2>
+      <h2 class="sh"><span class="sh__no">&sect;03</span><span class="sh__title">Service &amp; Teaching</span><span class="sh__rule"></span></h2>
       <ul class="service">
         {%- for row in site.data.service %}
         <li>
           <span class="service__role">{{ row.role }}</span>
+          {%- if row.courses %}
+          <ul class="courses">
+            {%- for c in row.courses %}
+            <li><span class="course__term">{{ c.term }}</span><span class="course__code">{{ c.code }}</span><span class="course__name">{{ c.name | escape }}</span></li>
+            {%- endfor %}
+          </ul>
+          {%- else %}
           <ul class="service__venues">
             {%- for v in row.venues %}
             <li><span class="service__venue">{{ v.name | escape }}</span><span class="service__years">{{ v.years }}</span></li>
             {%- endfor %}
           </ul>
+          {%- endif %}
         </li>
         {%- endfor %}
       </ul>
@@ -178,7 +208,7 @@ layout: default
 
   <section class="section" id="background">
     <div class="wrap">
-      <h2 class="sh"><span class="sh__no">&sect;03</span><span class="sh__title">Background</span><span class="sh__rule"></span></h2>
+      <h2 class="sh"><span class="sh__no">&sect;04</span><span class="sh__title">Background</span><span class="sh__rule"></span></h2>
       <ol class="timeline">
         <li>
           <span class="tl__when">2023 &ndash; now</span>

@@ -1,0 +1,33 @@
+# Talks, newest first.
+#   papers: ids from _data/publications.yml; each renders as a [n] link to that paper,
+#           and with exactly one paper the title links to it too.
+
+- when: Jan 2026
+  title: "Dinocchio: Distributed Prover for Ring Arithmetic"
+  event: IC3 Winter Retreat
+  papers: [dinocchio]
+
+- when: Dec 2025
+  title: "Lattice-based Multi-message Multi-recipient KEM/PKE with Malicious Security"
+  event: ASIACRYPT 2025
+  papers: [mmkem]
+
+- when: Aug 2025
+  title: "Qelect: Lattice-based Single Secret Leader Election Made Practical"
+  event: USENIX Security 2025
+  papers: [qelect]
+
+- when: Jul 2025
+  title: "Oblivious Message Retrieval: Group OMR and PerfOMR"
+  event: Mysten Labs seminar
+  papers: [gomr, perfomr]
+
+- when: May 2025
+  title: "Snake-eye Resistant PKE from LWE for Oblivious Message Retrieval and Robust Encryption"
+  event: EUROCRYPT 2025
+  papers: [snakeeye]
+
+- when: "2023"
+  title: "Group Oblivious Message Retrieval"
+  event: M.S. thesis talk, Columbia University
+  papers: [gomr]

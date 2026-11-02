@@ -5,7 +5,8 @@ permalink: /404.html
 ---
 <script>
   // Old academicpages URLs (/publications/, /publication/gomr, ...) now live on the home page.
-  if (/^\/(publications?|teaching|talks|cv)(\/|$)/.test(location.pathname)) location.replace('/#' + (location.pathname.indexOf('/publication') === 0 ? 'publications' : 'top'));
+  var old = location.pathname.match(/^\/(publications?|teaching|talks|cv)(\/|$)/);
+  if (old) location.replace('/#' + ({ publication: 'publications', publications: 'publications', teaching: 'service', talks: 'talks' }[old[1]] || 'top'));
 </script>
 <main class="lost">
   <h1>404</h1>
