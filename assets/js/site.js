@@ -188,9 +188,10 @@
       for (const e of entries) if (e.isIntersecting) markCurrent(e.target.id);
     }, { rootMargin: '-40% 0px -55% 0px' });
     navLinks.forEach(a => { const s = document.querySelector(a.hash); if (s) spy.observe(s); });
-    // the footer is short, so it may never cross the band above: claim it at the very bottom
+    // the last section may never cross the band above: claim it at the very bottom
+    const last = navLinks.at(-1)?.hash.slice(1);
     addEventListener('scroll', () => {
-      if (window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 4) markCurrent('contact');
+      if (window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 4) markCurrent(last);
     }, { passive: true });
   }
 
@@ -217,19 +218,5 @@
   document.querySelectorAll('a[href^="#pub-"]').forEach(a => a.addEventListener('click', () => filter('all')));
 
   /* ---------------- email ---------------- */
-  document.querySelectorAll('.js-email').forEach(el => {
-    const addr = `${el.dataset.u}@${el.dataset.d}`;
-    el.href = `mailto:${addr}`;
-    if ('show' in el.dataset) el.textContent = addr;
-  });
-  document.querySelectorAll('.copy').forEach(btn => btn.addEventListener('click', async () => {
-    const addr = `${btn.dataset.u}@${btn.dataset.d}`;
-    try {
-      await navigator.clipboard.writeText(addr);
-      btn.textContent = 'copied';
-    } catch (e) {
-      btn.textContent = 'copy failed';
-    }
-    setTimeout(() => { btn.textContent = 'copy'; }, 1600);
-  }));
+  document.querySelectorAll('.js-email').forEach(el => { el.href = `mailto:${el.dataset.u}@${el.dataset.d}`; });
 })();

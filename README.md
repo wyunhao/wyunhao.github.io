@@ -12,7 +12,7 @@ It is a single hand-built page. GitHub Pages runs Jekyll on every push, so there
 | Paper PDFs hosted here | `papers/` |
 | Topic filter chips | `_data/research.yml` |
 | Academic service | `_data/service.yml` |
-| Bio and research overview, background, contact | `index.html` |
+| Bio and research overview, background | `index.html` |
 | Styles / lattice animation | `assets/css/site.css`, `assets/js/site.js` |
 | Profile photo | `images/yunhao.jpg` (720×900) and `images/yunhao-480.jpg` |
 
